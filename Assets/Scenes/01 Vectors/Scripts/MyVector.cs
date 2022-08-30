@@ -30,7 +30,7 @@ public struct MyVector
         
     }
 
-    public float magnitude => Mathf.Sqrt(x * x * y * y);
+    public float magnitude => Mathf.Sqrt(x * x + y * y);
 
     public MyVector normalized
     {

@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class ForcePhysic : MonoBehaviour
+public class Fluids : MonoBehaviour
 {
     [SerializeField] private MyVector Wind;
-    [SerializeField] private float mass = 1f; 
-    
+    [SerializeField] private float mass = 1f;
+
     [Header("Extras")]
+    [SerializeField] private bool useFluidFriction = false;
     [Range(0,1)][SerializeField] private float Gravity = -9.8f; 
     [Range(0,1)][SerializeField] private float dampingFactor = 1;
 
@@ -31,13 +32,26 @@ public class ForcePhysic : MonoBehaviour
         aceleration *= 0f;
         float weigthScalar = mass * Gravity;
         MyVector weigth = new MyVector(0,weigthScalar);
-        float N = -mass * Gravity;
-        MyVector friction = velocity.normalized *  -1;
-        
-        Debug.Log(velocity.normalized);
-        friction.Draw(position,Color.green);
         ApplyForce(weigth);
-        ApplyForce(friction);
+        
+        if (useFluidFriction)
+        {
+            if (transform.position.y<=0)
+            {
+                float velocityMagnitude = velocity.magnitude;
+                float frontalArea = transform.localScale.x;
+                MyVector FluidFriction = velocity.normalized * frontalArea * velocityMagnitude * -0.5f;
+                ApplyForce(FluidFriction);
+            }
+        }
+        else
+        {
+            float N = -mass * Gravity;
+            MyVector friction = velocity.normalized *  -1;
+            ApplyForce(friction);
+            Debug.Log(velocity.normalized);   
+            friction.Draw(position,Color.green);
+        }
         Move();
     }
 
