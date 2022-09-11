@@ -8,6 +8,8 @@ public struct MyVector
 {
     public float x;
     public float y;
+    public float radius {get=>x; set=>x=value;}
+    public float angle {get=>y; set=>y=value;}
 
     public MyVector(float x, float y)
     {
@@ -99,7 +101,10 @@ public struct MyVector
     {
         return new MyVector(a.x, a.y);
     }
-
+    public MyVector FromPolarToCartesian()
+    {
+        return new MyVector(radius * Mathf.Cos(angle), radius * Mathf.Sin(angle));
+    }
     public MyVector lerp (MyVector b, float c)
     {
         return (this +(this - b)*c);
