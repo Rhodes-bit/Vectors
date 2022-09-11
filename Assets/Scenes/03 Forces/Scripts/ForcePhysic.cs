@@ -23,7 +23,7 @@ public class ForcePhysic : MonoBehaviour
     {
      
         position = transform.position;
-       
+        //Time.maximumDeltaTime=(1f/60f);
     }
 
     private void FixedUpdate()
