@@ -18,7 +18,7 @@ public class Force : MonoBehaviour
     private void Start()
     {
         position = transform.position;
-       
+        //Time.maximumDeltaTime=(1f/60f);
     }
 
     private void FixedUpdate()
