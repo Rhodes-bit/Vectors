@@ -55,7 +55,7 @@ public class TestVelocity : MonoBehaviour
 
     public void Move()
     {
-        // transform.position = position;
+        transform.position = position;
         velocity = velocity + aceleration * Time.deltaTime;
         displacement = velocity * (Time.deltaTime); //deltaTIME (1f/60f)
         position = position + displacement;

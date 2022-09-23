@@ -367,7 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -620,9 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f47cb44f2289cc4694551f83b7a4f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aceleration:
-    x: 0
-    y: 2
 --- !u!1 &2071142504
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,13 +631,14 @@ GameObject:
   - component: {fileID: 2071142507}
   - component: {fileID: 2071142506}
   - component: {fileID: 2071142505}
+  - component: {fileID: 2071142509}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2071142505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +697,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -724,3 +722,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2071142509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071142504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f47cb44f2289cc4694551f83b7a4f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

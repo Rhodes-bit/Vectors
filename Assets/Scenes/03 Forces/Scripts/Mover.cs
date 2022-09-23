@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    public MyVector Velocity => velocity;
     [SerializeField] private Transform target;
     [SerializeField] private MyVector force;
     [SerializeField] private MyVector aceleration;
     [SerializeField] private MyVector velocity;
+    [SerializeField] private bool checkBounds;
     private MyVector position;
     private MyVector displacement;
 
@@ -66,15 +68,20 @@ public class Mover : MonoBehaviour
         displacement = velocity * (Time.deltaTime); //deltaTIME (1f/60f)
         position = position + displacement;
 
-        if (position.x < -5 || position.x > 5) 
+        
+        if (checkBounds)
         {
-            position.x = Mathf.Sign(position.x)*5;
-            velocity.x = -velocity.x;
-        }
-        if (position.y < -5 || position.y > 5) 
-        {
-            position.y = Mathf.Sign(position.y)*5;
-            velocity.y = -velocity.y;
+            if (position.x < -5 || position.x > 5) 
+            {
+                position.x = Mathf.Sign(position.x)*5;
+                velocity.x = -velocity.x;
+            }
+            if (position.y < -5 || position.y > 5) 
+            {
+                position.y = Mathf.Sign(position.y)*5;
+                velocity.y = -velocity.y;
+            
+            }
         }
         
         transform.position = position;
