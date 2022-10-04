@@ -338,3 +338,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0041cf4df4b3774458befab1ba2897e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  period: 1
+  frecuency: 3

@@ -7,7 +7,9 @@ public class Oscillations : MonoBehaviour
 {
     //[SerializeField, Range(0f, 10f)] private float displacementX;
     private Vector3 initialPotition;
-    [SerializeField] private float speed=3;
+    [SerializeField] private float period=3;
+    [SerializeField] private float frecuency=3;
+    
 
     private void Start()
     {
@@ -17,8 +19,10 @@ public class Oscillations : MonoBehaviour
    
    private  void Update()
    {
-       transform.position = initialPotition + (Vector3.right + Vector3.up) * Mathf.Sin(Time.time) * speed;
+       float noise = Mathf.Sin (4f*Time.time)+Mathf.Sin(2f*Time.time)+Mathf.Sin(3f*Time.time)+Mathf.Sin(7f*Time.time);
+       transform.position = initialPotition + Vector3.right * Mathf.Sin(2f+Mathf.PI*(Time.time /period))*frecuency;
        // transform.position += Vector3.up * Mathf.Sin(Time.time);
        //transform.position= new Vector3 (Mathf.Sin(Time.time),transform.position.y,transform.position.z);
+       transform.position = initialPotition + Vector3.right * noise * frecuency;
    }
 }
