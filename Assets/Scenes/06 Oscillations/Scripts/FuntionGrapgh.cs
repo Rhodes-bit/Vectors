@@ -28,15 +28,15 @@ public class FuntionGrapgh : MonoBehaviour
             Vector3 currPosition = newPoint.transform.position;
             
             currPosition.x = i * m_separation;
-            currPosition.y = Mathf.Sin(currPosition.x) + Mathf.Sin(currPosition.x + Time.time);
+            currPosition.y = Mathf.Sin(currPosition.x + Time.time);
 
             newPoint.transform.localPosition = currPosition;
-            // newPoint.transform.position = currPosition + transform.position; 
+            
         }
         
     }
     void Update()
     {
-        
+        UpdatePoints();
     }
 }
