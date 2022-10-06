@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tween : MonoBehaviour
+public class Tweens : MonoBehaviour
 {
     [SerializeField]  float time;
     [SerializeField] Transform targetTransform;
@@ -24,7 +24,7 @@ public class Tween : MonoBehaviour
     private void Update()
     {
         tparameter = currentTime / time;
-       // transform.position = Vector3.Lerp(inicialPosition, targetPosition, tparameter);
+        transform.position = Vector3.Lerp(inicialPosition, targetPosition, tparameter);
        spriteRenderer.color = Color.Lerp(inicialColor, finalColor, tparameter);
         currentTime += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
