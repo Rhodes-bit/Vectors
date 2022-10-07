@@ -20,8 +20,7 @@ public class Oscillations : MonoBehaviour
    private  void Update()
    {
        float noise = Mathf.Sin (4f*Time.time)+Mathf.Sin(2f*Time.time)+Mathf.Sin(3f*Time.time)+Mathf.Sin(7f*Time.time);
-       transform.position = initialPotition + Vector3.right * Mathf.Sin(2f+Mathf.PI*(Time.time /period))*frecuency;
-       
-       transform.position = initialPotition + Vector3.right * noise * frecuency;
+       //transform.position = initialPotition + Vector3.right * Mathf.Sin(2f+Mathf.PI*(Time.time /period))*frecuency;
+       transform.position = initialPotition + Vector3.right * noise;
    }
 }

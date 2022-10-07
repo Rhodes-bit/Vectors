@@ -220,11 +220,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76201303185881a48b5f16e8ab270e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  easing: 2
+  time: 3
   targetTransform: {fileID: 929675571}
   tparameter: 0
-  inicialColor: {r: 1, g: 0.47547168, b: 0.47547168, a: 1}
-  finalColor: {r: 0.73324084, g: 1, b: 0.15471691, a: 1}
+  inicialColor: {r: 0.12709093, g: 0, b: 1, a: 1}
+  finalColor: {r: 1, g: 0.8809346, b: 0, a: 1}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.19058813
+      outSlope: -0.19058813
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.36772603
+      value: -0.070084214
+      inSlope: 0.5116394
+      outSlope: 0.5116394
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5492194
+      value: 0.15022463
+      inSlope: 2.8639574
+      outSlope: 2.8639574
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6656661
+      value: 0.6758705
+      inSlope: 1.9447603
+      outSlope: 1.9447603
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.94500226
+      value: 0.5014175
+      inSlope: 4.2204905
+      outSlope: 4.2204905
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 9.065508
+      outSlope: 9.065508
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &929675569
 GameObject:
   m_ObjectHideFlags: 0
