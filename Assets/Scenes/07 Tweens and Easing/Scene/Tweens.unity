@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76201303185881a48b5f16e8ab270e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easing: 2
+  easing: 5
   time: 3
   targetTransform: {fileID: 929675571}
   tparameter: 0

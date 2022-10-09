@@ -12,6 +12,7 @@ public class Tweens : MonoBehaviour
         EaseInCubic,
         EaseOutSine,
         EaseInOutElastic,
+        EaseOutBounce,
         CustomCurve,
     }
 
@@ -65,6 +66,11 @@ public class Tweens : MonoBehaviour
                 break;
             case 5:
                 tparameter = currentTime / time;
+                transform.position = Vector3.LerpUnclamped(inicialPosition, targetPosition, EaseOutBounce(tparameter));
+                spriteRenderer.color = Color.LerpUnclamped(inicialColor, finalColor, EaseOutBounce(tparameter));
+                break;
+            case 6:
+                tparameter = currentTime / time;
                 transform.position = Vector3.LerpUnclamped(inicialPosition, targetPosition, curve.Evaluate(tparameter));
                 spriteRenderer.color = Color.LerpUnclamped(inicialColor, finalColor, curve.Evaluate(tparameter));
                 break;
@@ -88,8 +94,8 @@ public class Tweens : MonoBehaviour
     private float EaseInOutBounce(float x)
     {
         return x < 0.5f
-            ? (1f - EaseInOutBounce(1f - 2f * x)) / 2f
-            : (1f + EaseInOutBounce(2f * x - 1f)) / 2f;
+            ? (1f - EaseOutBounce(1f - 2f * x)) / 2f
+            : (1f + EaseOutBounce(2f * x - 1f)) / 2f;
     }
     private float  EaseInQuad(float x)
     {
@@ -102,6 +108,22 @@ public class Tweens : MonoBehaviour
     private float  EaseOutSine(float x)
     {
         return 1f - Mathf.Cos((x * Mathf.PI) / 2f);
+    }
+
+    private float EaseOutBounce(float x)
+    {
+       float n1 = 7.5625f;
+       float d1 = 2.75f;
+
+        if (x < 1 / d1) {
+            return n1 * x * x;
+        } else if (x < 2 / d1) {
+            return n1 * (x -= 1.5f / d1) * x + 0.75f;
+        } else if (x < 2.5 / d1) {
+            return n1 * (x -= 2.25f / d1) * x + 0.9375f;
+        } else {
+            return n1 * (x -= 2.625f / d1) * x + 0.984375f;
+        }
     }
     private float EaseInOutElastic(float x)
     {
