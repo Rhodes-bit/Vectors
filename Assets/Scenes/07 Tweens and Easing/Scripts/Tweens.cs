@@ -46,18 +46,18 @@ public class Tweens : MonoBehaviour
                 break;
             case 1:
                 tparameter = currentTime / time;
-                transform.position = Vector3.LerpUnclamped(inicialPosition, targetPosition, EaseInQuad(tparameter));
-                spriteRenderer.color = Color.LerpUnclamped(inicialColor, finalColor, EaseInQuad(tparameter));
+                transform.position = Vector3.Lerp(inicialPosition, targetPosition, EaseInQuad(tparameter));
+                spriteRenderer.color = Color.Lerp(inicialColor, finalColor, EaseInQuad(tparameter));
                 break;
            case 2:
                tparameter = currentTime / time;
-               transform.position = Vector3.LerpUnclamped(inicialPosition, targetPosition, EaseInCubic(tparameter));
-               spriteRenderer.color = Color.LerpUnclamped(inicialColor, finalColor, EaseInCubic(tparameter));
+               transform.position = Vector3.Lerp(inicialPosition, targetPosition, EaseInCubic(tparameter));
+               spriteRenderer.color = Color.Lerp(inicialColor, finalColor, EaseInCubic(tparameter));
                break;
             case 3:
                 tparameter = currentTime / time;
-                transform.position = Vector3.LerpUnclamped(inicialPosition, targetPosition, EaseOutSine(tparameter));
-                spriteRenderer.color = Color.LerpUnclamped(inicialColor, finalColor, EaseOutSine(tparameter));
+                transform.position = Vector3.Lerp(inicialPosition, targetPosition, EaseOutSine(tparameter));
+                spriteRenderer.color = Color.Lerp(inicialColor, finalColor, EaseOutSine(tparameter));
                 break;
             case 4:
                 tparameter = currentTime / time;
