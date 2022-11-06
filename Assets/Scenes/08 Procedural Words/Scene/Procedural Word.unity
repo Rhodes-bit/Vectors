@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branchPrefab: {fileID: 6749690399421698300, guid: 6cf9263ae4f79ae4e823e72248bbddc4, type: 3}
+  maxDepth: 5
 --- !u!4 &289176801
 Transform:
   m_ObjectHideFlags: 0
