@@ -6,38 +6,26 @@ using UnityEngine;
 
 public class FINAL : MonoBehaviour
 {
-    [Range(0,1)][SerializeField] private float Gravity = 9.8f; 
+    [Range(0, 1)][SerializeField] private float Gravity = 1f;
     [SerializeField] private float m_Mass;
-    [SerializeField] private float r_Distance;
     [SerializeField] private float m_mass;
-    [SerializeField] LineRenderer curve;
-    private float energy;
-    private MyVector aceleration;
-    private MyVector velocity;
-    private MyVector position;
+    [SerializeField] Transform planet;
+    LineRenderer curve;
 
-    void Start()
+    private void Start()
     {
         curve = GetComponent<LineRenderer>();
-        
-        Vector3[] points = new Vector3[100];
-        for (int i = 0; i < 100; i++)
-        {
-            r_Distance = 0.3f * i+0.1f;
-            energy = ((Gravity *( m_mass )*( m_Mass))/ r_Distance);
-            points[i]= new Vector3(r_Distance,energy,0);
-        } 
-        curve.SetPositions(points);
+        curve.positionCount = 100;
     }
 
-
-    void Update()
+    private void Update()
     {
-         /*r_Distance = transform.position.x;
-         energy = ((Gravity *( m_mass )*( m_Mass))/ r_Distance);
-         MyVector position = transform.position;
-         position.y = energy;
-         transform.position=position;*/
-
+        for (int i = 0; i < curve.positionCount; i++)
+        {
+            float distance = 0.1f + 0.3f * i ;
+            float energy = -Gravity * m_mass * m_Mass / distance;
+            Vector3 point = new Vector3(planet.position.x + distance, energy, 0);
+            curve.SetPosition(i, point);
+        }
     }
 }
