@@ -24,8 +24,10 @@ public class FINAL : MonoBehaviour
         {
             float distance = 0.1f + 0.3f * i ;
             float energy = -Gravity * m_mass * m_Mass / distance;
-            Vector3 point = new Vector3(planet.position.x + distance, energy, 0);
-            curve.SetPosition(i, point);
+            Vector3 pointx = new Vector3(planet.position.x + distance, energy, 0);
+            Vector3 pointy = new Vector3(planet.position.y + distance, energy, 0);
+            curve.SetPosition(i, pointx + pointy);
+            
         }
     }
 }
